@@ -50,13 +50,21 @@ function dateOfTomorrow() {
     return tomorrow;    
 }
 
-var myArr = ['foo', 'bar', 'baz']
-console.log(myArr)
-myArr[2]
-console.log('foo' in myArr)
+function dateOfToday() {
+    const date = new Date();
+    let dd = date.getDate();
+    let mm = date.getMonth() + 1;
+    let yy = date.getFullYear();
 
-var arr = [];
-arr[0]  = 'a';
-arr[1]  = 'b';
-arr.foo = 'c';
-console.log(arr);
+    if (dd < 10) {
+        dd = "0" + dd;
+    }
+    if (mm < 10) {
+        mm = "0" + mm;
+    }
+    let today = dd + '/' + mm + '/' + yy;
+    return today;
+
+}
+
+document.getElementById('date').value = dateOfToday()

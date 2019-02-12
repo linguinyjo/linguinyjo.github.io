@@ -76,28 +76,46 @@
             <div >
                 <div class="counter">25</div>
             </div>
-            <form>
+            <form action="http://localhost:3002/dailytarget" method="post">
                 <div class="form-row trackerDiv">
-
+                    <div class="trackerForm col-sm-3" style="display: inline-block">
+                        <label for="name">Date</label>
+                        <input name="date" type="text" value id="date" class="form-control" readonly>
+                    </div>
                     <div class="trackerForm col-sm-3" style="display: inline-block">
                         <label for="name">Time awake</label>
-                        <input type="text" value id="awake" class="form-control">
+                        <select name="awake" type="text" value id="awake" class="form-control">
+                            <option></option>
+                            <option value="03:00">03:00</option>
+                            <option value="04:00">04:00</option>
+                            <option value="05:00">05:00</option>
+                            <option value="06:00">06:00</option>
+                            <option value="07:00">07:00</option>
+                            <option value="08:00">08:00</option>
+                            <option value="09:00">09:00</option>
+                            <option value="10:00">10:00</option>
+                            <option value="11:00">11:00</option>
+                            <option value="12:00">12:00</option>
+                        </select>
                     </div>
                     <div class="trackerForm col-sm-3">
                         <label for="name">Distance ran</label>
-                        <input type="text" value id="distance" class="form-control">
+                        <input name="distance" type="text" value id="distance" class="form-control">
                     </div>
                     <div class="trackerForm col-sm-3">
                         <label for="name">Meditate</label>
-                        <input type="text" value id="meditate" class="form-control">
+                        <select name="meditate" type="text" value id="meditate" class="form-control">
+                            <option value="yes">Yes</option>
+                            <option value="no">No</option>
+                        </select>
                     </div>
-
+                    <div style="text-align: center; margin-left: 40%">
+                        <button type="submit" class="btn btn-dark confirm " onClick="addRow()" id="createRow">Confirm</button> 
+                        
+                    </div>      
                 </div>
-
             </form>
-            <div style="text-align: center">
-                <button type="submit" class="btn btn-dark confirm" id="createRow" onClick="addRow()">Confirm</button>
-            </div>
+             
             <button id="removeRow" onClick="removeRow()">Remove</button>
         </div>
         <div style="text-align: center">
