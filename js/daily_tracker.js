@@ -1,3 +1,39 @@
+//const con = require('../data/dailytrackerdb')
+
+function pullData (row, field) {
+    con.connect(function(err) {
+        if (err) throw err;
+        con.query('SELECT * FROM dailytarget', (error, result, fields) => {
+            if (error) throw error;
+            
+            let data = result[row][field];         
+            return data;         
+        });
+    })
+}
+console.log(pullData (1, 'distance'))
+//document.getElementById("testing").innerHTML = data;
+
+function genTable () {
+    
+    let dateEntry = pullData(1, 'date')
+    let awakeEntry = pullData(1, 'awake')
+    let distanceEntry = pullData(1, 'distance')
+    let meditateEntry = pullData(1, 'meditate')
+
+    var cell1 = document.getElementById("testing");   
+    // var cell2 = row.insertCell(1);    
+    // var cell3 = row.insertCell(2);   
+    // var cell4 = row.insertCell(3); 
+        
+
+    cell1.innerHTML = "dateEntry";
+    cell2.innerHTML = awakeEntry;
+    cell3.innerHTML = distanceEntry;
+    cell4.innerHTML = meditateEntry;  
+    
+}
+genTable()
 
 //creates a new row in the table with tomorrows date; doesn't create a row if there is already a row existing with tomorrow's date
 function addRow() {
@@ -64,7 +100,10 @@ function dateOfToday() {
     }
     let today = dd + '/' + mm + '/' + yy;
     return today;
-
 }
 
 document.getElementById('date').value = dateOfToday()
+
+
+// Get total ids from mysql table - last id + 1 = number of rows
+

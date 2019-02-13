@@ -18,7 +18,7 @@ const router = app => {
             response.send(result);
         });
     });
-
+    
     // Display a single user by ID
     app.get('/dailytarget/:id', (request, response) => {
         const id = request.params.id;
@@ -37,16 +37,6 @@ const router = app => {
             response.status(201).send(`User added with ID: ${result.insertId}`);
         });
     });
-    // app.post('/dailytarget', (request, response) => {
-    //     pool.query("INSERT INTO dailytarget SET ?", request.body, (err, result) => {
-    //         if(err) throw err;
-            
-    //         response.send(`target added with ID: ${result.insertId}`);
-    //         });
-       
-    // });
-
-
 
     // Update an existing user
     app.put('/dailytarget/:id', (request, response) => {

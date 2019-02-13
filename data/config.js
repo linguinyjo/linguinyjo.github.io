@@ -8,7 +8,7 @@ const config = {
     database: 'dailytarget',
 };
 
+
 const pool = mysql.createPool(config);
 
-// Export the pool
 module.exports = pool;
