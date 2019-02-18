@@ -23,7 +23,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
         <div class="container">
             <a class="navbar-brand js-scroll-trigger"
-                href="C:\Users\Andrei\Desktop\Coding_stuff\Project_1\website\index.html">Andrei
+                href="http://localhost:8000/Project_1/website/index.html">Andrei
                 Gabzdyl</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
                 aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -73,7 +73,7 @@
     <div>
         <div>
             <div >
-                <div class="counter">25</div>
+                <div id="count" class="counter"></div>
             </div>
             <form action="http://localhost:3002/dailytarget" method="post">
                 <div class="form-row trackerDiv">
@@ -104,6 +104,7 @@
                     <div class="trackerForm col-sm-3">
                         <label for="name">Meditate</label>
                         <select name="meditate" type="text" value id="meditate" class="form-control">
+                            <option value></option>
                             <option value="yes">Yes</option>
                             <option value="no">No</option>
                         </select>
@@ -116,8 +117,9 @@
             </form>
              
             <button id="removeRow" onClick="removeRow()">Remove</button>
+            
         </div>
-        <div style="text-align: center">
+        <div style="text-align: center;  margin-bottom: 10%; margin-left: 10%; margin-right: 10%;">
 
             <table id="myTable" class="table table-bordered table-striped">
                 <thead>
@@ -127,7 +129,7 @@
                     <th scope="col" tabindex="0" role="column-header button" title="Sort ascending">Meditate</th>
                 </thead>
                 <tr>
-                    <td style="text-align: center" id="testing"></td>
+                    <td style="text-align: center" id="test1"></td>
                     <td style="text-align: center"></td>
                     <td style="text-align: center"></td>
                     <td style="text-align: center"></td>
@@ -137,13 +139,15 @@
             </table>
         </div>
     </div>
+   
 
     <footer class="py-5 bg-dark fixed-bottom">
         <div class="container">
             <p class="m-0 text-center text-white">Copyright &copy; Your Website 2019</p>
-        </div>
+        </div> 
 
     </footer>
+    
 
     <!-- Bootstrap core JavaScript -->
     <script src="vendor/jquery/jquery.min.js"></script>
@@ -153,10 +157,10 @@
     <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
 
     <!-- Custom JavaScript for this theme -->
-    <script src="js/scrolling-nav.js"></script>
+    <script src="scripts/scrolling-nav.js"></script>
+    <!--<script type="module" src="scripts/data/dailytrackerdb.js"></script>-->
+    <script src="scripts/js/daily_tracker.js"></script>
     
-    <script src="js/daily_tracker.js"></script>
-    <script>console.log(document.getElementById("buttonOne"))</script>
 </body>
 
 </html>
