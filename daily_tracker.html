@@ -47,11 +47,11 @@
     <br><br>
     <div class="bg-light" style="height: 150px; width: 100%;">
         <div style="text-align: center; position: relative; top: 40px; ">
-            <h4>Morning targets</h4>
-            <div>The aim is to the following every morning for as many days in a row as possible.</div>
+            <h4>The Early Morning Challenge</h4>
+            <div>Do the following every morning for as many days in a row as possible.</div>
 
             <div class="row"
-                style="border-bottom: 3px solid black; padding-inline-start: 200px; position: relative; top: 20px;">
+                style="border-bottom: 2px solid black; padding-inline-start: 200px; position: relative; top: 20px;">
                 <div class="column targetCol">
                     <ul class="ul_1">
                         <li>Wake up at 6am</li>
@@ -72,18 +72,15 @@
     </div><br><br>
     <div>
         <div>
-            <div >
-                <div id="count" class="counter"></div>
-            </div>
-            <form action="http://localhost:3002/dailytarget" method="post">
+            <form id="trackerForm">
                 <div class="form-row trackerDiv">
-                    <div class="trackerForm col-sm-3" style="display: inline-block">
+                    <div class="col-sm-3" style="display: inline-block">
                         <label for="name">Date</label>
                         <input name="date" type="text" value id="date" class="form-control" readonly>
                     </div>
-                    <div class="trackerForm col-sm-3" style="display: inline-block">
+                    <div class="col-sm-3" style="display: inline-block">
                         <label for="name">Time awake</label>
-                        <select name="awake" type="text" value id="awake" class="form-control">
+                        <select name="awake" type="text" value id="awake" class="form-control" required> 
                             <option></option>
                             <option value="03:00">03:00</option>
                             <option value="04:00">04:00</option>
@@ -93,43 +90,44 @@
                             <option value="08:00">08:00</option>
                             <option value="09:00">09:00</option>
                             <option value="10:00">10:00</option>
-                            <option value="11:00">11:00</option>
-                            <option value="12:00">12:00</option>
                         </select>
                     </div>
-                    <div class="trackerForm col-sm-3">
-                        <label for="name">Distance ran</label>
-                        <input name="distance" type="text" value id="distance" class="form-control">
+                    <div class="col-sm-3">
+                        <label for="name">Distance ran (km)</label>
+                        <input name="distance" type="number" value id="distance" class="form-control" required>
                     </div>
-                    <div class="trackerForm col-sm-3">
+                    <div class="col-sm-3">
                         <label for="name">Meditate</label>
-                        <select name="meditate" type="text" value id="meditate" class="form-control">
+                        <select name="meditate" type="text" value id="meditate" class="form-control" required>
                             <option value></option>
                             <option value="yes">Yes</option>
                             <option value="no">No</option>
                         </select>
                     </div>
-                    <div style="text-align: center; margin-left: 40%">
-                        <button type="submit" class="btn btn-dark confirm " onClick="addRow()" id="createRow">Confirm</button> 
+                    
+                    <div style="text-align: center;">
                         
+                        <button type="submit" value="Submit" onclick="validateForm()" class="btn btn-dark confirm " id="createRow">Confirm</button>
                     </div>      
                 </div>
             </form>
-             
             <button id="removeRow" onClick="removeRow()">Remove</button>
             
+            <div >
+                <div id="count" class="counter"></div>
+            </div>        
         </div>
         <div style="text-align: center;  margin-bottom: 10%; margin-left: 10%; margin-right: 10%;">
-
+            
             <table id="myTable" class="table table-bordered table-striped">
                 <thead>
                     <th scope="col" tabindex="0" role="column-header button" title="Sort ascending">Date</th>
                     <th scope="col" tabindex="0" role="column-header button" title="Sort ascending">Time awake</th>
-                    <th scope="col" tabindex="0" role="column-header button" title="Sort ascending">Distance run</th>
+                    <th scope="col" tabindex="0" role="column-header button" title="Sort ascending">Distance ran (km)</th>
                     <th scope="col" tabindex="0" role="column-header button" title="Sort ascending">Meditate</th>
                 </thead>
                 <tr>
-                    <td style="text-align: center" id="test1"></td>
+                    <td style="text-align: center"></td>
                     <td style="text-align: center"></td>
                     <td style="text-align: center"></td>
                     <td style="text-align: center"></td>
@@ -152,15 +150,17 @@
     <!-- Bootstrap core JavaScript -->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    
 
     <!-- Plugin JavaScript -->
     <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
     <!-- Custom JavaScript for this theme -->
     <script src="scripts/scrolling-nav.js"></script>
     <!--<script type="module" src="scripts/data/dailytrackerdb.js"></script>-->
     <script src="scripts/js/daily_tracker.js"></script>
+    <script src="scripts/js/form_validation.js"></script>
     
 </body>
-
 </html>

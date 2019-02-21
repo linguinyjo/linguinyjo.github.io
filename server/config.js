@@ -6,6 +6,7 @@ const config = {
     user: 'root',
     password: 'root',
     database: 'dailytarget',
+
 };
 
 

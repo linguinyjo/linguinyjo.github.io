@@ -10,26 +10,26 @@ export const con = mysql.createConnection({
 });
 
 //wraps a query to the database in a promise; returns a promise object with the complete table of results
-pullData = function () {
-    return new Promise(function(resolve, reject) {
-         con.connect(function(err) {
-            if (err) throw err;
-            con.query('SELECT * FROM dailytarget', (err, result) => {
-                if (err) {
-                    return reject(err)
-                }                  
-                resolve(result)                                                 
-            });
-            con.end();
-        })      
-    });  
-};
+// pullData = function () {
+//     return new Promise(function(resolve, reject) {
+//          con.connect(function(err) {
+//             if (err) throw err;
+//             con.query('SELECT * FROM dailytarget', (err, result) => {
+//                 if (err) {
+//                     return reject(err)
+//                 }                  
+//                 resolve(result)                                                 
+//             });
+//             con.end();
+//         })      
+//     });  
+// };
 
-pullData().then(function(result) {
+// pullData().then(function(result) {
     
-//     //everything we want to do with the results from the mysql db query needs to go inside of here
-//     for (let element of result)
-//     console.log(element['distance'])
+// //     //everything we want to do with the results from the mysql db query needs to go inside of here
+// //     for (let element of result)
+// //     console.log(element['distance'])
       
    
-}).catch((err) => setImmediate(() => { throw err; }));
+// }).catch((err) => setImmediate(() => { throw err; }));
