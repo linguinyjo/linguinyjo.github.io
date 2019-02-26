@@ -1,5 +1,5 @@
 // Load the MySQL pool connection
-const pool = require('../../server/config');
+const pool = require('./config');
 
 // Route the app
 const router = app => {
@@ -59,5 +59,6 @@ const router = app => {
         });
     });
 }
+
 // Export the router
 module.exports = router;

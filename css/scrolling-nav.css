@@ -63,7 +63,7 @@ h3 {
   text-align: center; 
   margin-top: 6rem;
   margin-bottom: 8rem;
-  margin-left: 45%; 
+  margin-left: 44%; 
   margin-right: 45%;
   font-size: 100px;
   color: rgba(72, 155, 46, 0.973);
@@ -75,6 +75,7 @@ h3 {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 .trackerDiv {
+  width: 40%;
   text-align: center; 
   margin-left: 35rem; 
   margin-right: 35rem
@@ -84,15 +85,47 @@ h3 {
   margin: auto; 
 }
 .confirm {
-  text-align: center;
-  margin: 10px;
+  margin-top: 60px;
+  margin-left: 340px
 }
-.buttonConfirm {
-  margin: 0;
-  height: 100vh;  
-  display: flex;
-  flex-direction: column; 
-  justify-content: center; 
+.tableButton {
+  background-color: rgba(221, 220, 220, 0.795); 
+  margin-left: 15%; 
+  border: solid;
+  border-color: grey;
+  border-width: 1px;
 }
 
+.goBack {
+  background-color: rgba(221, 220, 220, 0.795); 
+  margin-right: 98%;
+  border: solid;
+  border-color: grey;
+  border-width: 1px;
+  width: 100px;
+}
+
+#tableHeader {
+  display: inline-flexbox;
+  margin:auto;
+  padding:7px 13px;
+  text-align:center;
+  background:#FFEFD5;
+  font-size:20px;
+  font-family: 'Arial', sans-serif;
+  white-space: nowrap;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  
+}
+
+#tableHeader:active {
+  vertical-align: top;
+  padding: 8px 13px 6px;
+}
+
+.one th{
+  text-decoration: none;
+}
 
